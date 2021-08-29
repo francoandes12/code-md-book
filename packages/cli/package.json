@@ -1,0 +1,29 @@
+{
+  "name": "code-md-book",
+  "version": "1.0.0",
+  "description": "cli",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": "dist/index.js",
+  "scripts": {
+    "start": "tsc --watch --preserveWatchOutput",
+    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV='production'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@andes12/local-client": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.9",
+    "esbuild": "0.8.26",
+    "typescript": "^4.3.5",
+    "@andes12/local-api": "^1.0.0",
+    "commander": "^8.1.0"
+  }
+}
